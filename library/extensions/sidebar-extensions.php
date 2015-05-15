@@ -16,8 +16,10 @@
  * Default: ON <br>
  * 
  * Filter: thematic_sidebar
+ * 
+ * @param string $name
  */
-function thematic_sidebar() {
+function thematic_sidebar( $name = "primary-aside" ) {
 	
 	$current_layout = apply_filters( 'thematic_current_theme_layout', thematic_get_theme_opt( 'layout' ) );
 	
@@ -30,7 +32,7 @@ function thematic_sidebar() {
 	$show = apply_filters('thematic_sidebar', $show);
 	
 	if ( $show ) {
-    	get_sidebar();
+    	get_sidebar($name);
 	}
 	
 	return;
